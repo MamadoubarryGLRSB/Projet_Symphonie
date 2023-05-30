@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Restaurant</title>
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font/flaticon.css">
+        <link rel="stylesheet" href="assets/css/plugins/owl.carousel.min.css">
+        <link rel="stylesheet" href="assets/css/style.css" />
+    </head>
+    <!-- =================Body Started==================== -->
+    <body>
+
+        <!-- =================Header Started================ -->
+        <header>
+            <div class="main-nav">
+                <div class="container">
+                    <div class="row">
+                        <div class="menu-toggle"></div>
+                        <div class="logo">
+                            <img src="assets/images/logo/logo.png">
+                        </div>
+
+                        <div class="my-nav">
+                            <div class="menu">
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                    
+                                    <li><a href="#our-menu">Our Menu</a></li>
+                                    <li><a href="/panier">Panier</a></li>
+                                    <li><a href="/liste_reserv_user">Mes commandes</a></li>
+                                    <li><a href="/logout">Deconnexion</a></li>
+                                    
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- =================Header End================ -->
+        <!-- ->->->->->->->->->->->->->->->->->->->->->->->->->->->->->-> -->
+		
+        <!-- ================================================================= -->
+		<!-- ->->->->->->->->->->->->->->->->->->->->->->->->->->->->->-> -->
+        <!-- =================Main Started================ -->
+		<main>
+			<section class="slider">
+                <div class="shape"></div>
+                <div class="shape-01"></div>
+                <div class="banner">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12">
+                                            <div class="wrapper">
+                                                <div class="content">
+                                                    <h1>VOTRE NOURRITURE PRÉFÉRÉE LIVRÉE & FRAÎCHE</h1>
+                                                    
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-sm-12">
+                                            <div class="wrapper">
+                                                <img src="assets/images/slider/slide-02.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12">
+                                            <div class="wrapper">
+                                                <div class="content">
+                                                    <h1>VOTRE NOURRITURE PRÉFÉRÉE LIVRÉE & FRAÎCHE</h1>
+                                                    
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-sm-12">
+                                            <div class="wrapper">
+                                                <img src="assets/images/slider/slide-02.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12">
+                                            <div class="wrapper">
+                                                <div class="content">
+                                                    <h1>VOTRE NOURRITURE PRÉFÉRÉE LIVRÉE & FRAÎCHE</h1>
+                                                    
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-sm-12">
+                                            <div class="wrapper">
+                                                <img src="assets/images/slider/slide-03.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- --------------------------------------------------------------------------- -->
+            
+            <!-- --------------------------------------------------------------------------- -->
+            
+            
+            <!-- --------------------------------------------------------------------------- -->
+            <section class="bg-04" id="our-menu">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="heading">
+                                <span>Menu</span>
+                                <h2>Découvrez notre meilleur menu</h2>
+                                <p>Restaurant et accueil très agréable, avec des plats et une présentation surprenante, le tout agrémenté de saveurs et de portions généreuse. Une ambiance de très bon goûts, une qualité de service très peu reprochable. Des prix très abordable vu la situation du restaurant, avec des produits frais.</p>
+                            </div>
+                         </div>
+
+                        <div class="col-12">
+                            <div class="row">
+                                {% for produit in produits %}
+                                {% if produit.etat == 'disponible' %} 
+                                    
+                                
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="wrapper">
+                                        <div class="tab-content">
+                                            <figure>
+                                                <img src="{{ asset('uploads/') ~ produit.image }}" width="300" height="250" alt="Image de {{ produit.libelle }}">
+                                            </figure>
+                                            <div class="sentence">
+                                                <h3>{{ produit.libelle }}<span>{{ produit.prix }} cfa </span></h3>
+                                                <h6>Crab / Veggie / Soup</h6>
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                                Repellendus unde fuga saepe accusantium hic iusto qui </p>
+                                            </div>
+                                            <div class="rate-box">
+                                                <ol>
+                                                    <li><span class="flaticon-star"></span></li>
+                                                    <li><span class="flaticon-star"></span></li>
+                                                    <li><span class="flaticon-star"></span></li>
+                                                    <li><span class="flaticon-star"></span></li>
+                                                </ol>
+                                                <div class="plus">
+                                                   
+                                                        <a href="{{path("cart_add", {id: produit.id})}}"><span class="flaticon-plus">
+                                                         
+                                                    </span></a> 
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                               {% endif  %} 
+                                {% endfor %}
+                                
+                           
+                           
+                            </div>
+                        </div>
+                         {# display navigation #}
+                         <div class="pagination">
+                            {{ knp_pagination_render(produits) }}
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- --------------------------------------------------------------------------- -->
+            <section class="bg-05">
+                <div class="shape-03"></div>
+                <div class="shape-04"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="heading">
+                                <span>Team</span>
+                                <h2>Explore Our Team</h2>
+                                <p>Excellent repas, bien dosé, des produits d'excellent qualité ! 
+                                    Un moment inoubliable pour une journée exceptionnelle ! Bravo et Merci de mettre
+                                     à l'honneur une cuisine plutôt française. 
+                                     Tout ce qui a été présenté était très bon.</p>
+                            </div>
+                        </div>
+
+                        <div class="main-team-card d-flex">
+                            <div class="team-setup">
+                                <div class="team-items">
+                                    <div class="team-user">
+                                    <img src="assets/images/team/1.jpg">
+                                    </div>
+                                    <div class="team-user-social">
+                                    <ol>
+                                        <li><i class="flaticon-facebook"></i></li>
+                                        <li><i class="flaticon-twitter"></i></li>
+                                        <li><i class="flaticon-behance"></i></li>
+                                        <li><i class="flaticon-youtube"></i></li>
+                                    </ol>
+                                    </div>
+                                    <div class="team-name">
+                                    <h2>Mark Anthony</h2>
+                                    <b>Founder & CEO</b>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="team-setup">
+                                <div class="team-items">
+                                    <div class="team-user">
+                                    <img src="assets/images/team/2.jpg">
+                                    </div>
+                                    <div class="team-user-social">
+                                    <ol>
+                                        <li><i class="flaticon-facebook"></i></li>
+                                        <li><i class="flaticon-twitter"></i></li>
+                                        <li><i class="flaticon-behance"></i></li>
+                                        <li><i class="flaticon-youtube"></i></li>
+                                    </ol>
+                                    </div>
+                                    <div class="team-name">
+                                    <h2>Jessica Lee</h2>
+                                    <b>Chinese Kitchen Lead</b>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="team-setup">
+                                <div class="team-items">
+                                    <div class="team-user">
+                                    <img src="assets/images/team/3.jpg">
+                                    </div>
+                                    <div class="team-user-social">
+                                    <ol>
+                                        <li><i class="flaticon-facebook"></i></li>
+                                        <li><i class="flaticon-twitter"></i></li>
+                                        <li><i class="flaticon-behance"></i></li>
+                                        <li><i class="flaticon-youtube"></i></li>
+                                    </ol>
+                                    </div>
+                                    <div class="team-name">
+                                    <h2>John Bennett</h2>
+                                    <b>French Kitchen Lead</b>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="team-setup">
+                                <div class="team-items">
+                                    <div class="team-user">
+                                    <img src="assets/images/team/4.jpg">
+                                    </div>
+                                    <div class="team-user-social">
+                                    <ol>
+                                        <li><i class="flaticon-facebook"></i></li>
+                                        <li><i class="flaticon-twitter"></i></li>
+                                        <li><i class="flaticon-behance"></i></li>
+                                        <li><i class="flaticon-youtube"></i></li>
+                                    </ol>
+                                    </div>
+                                    <div class="team-name">
+                                    <h2>ANDERSON JHON</h2>
+                                    <b>Sous Chef</b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- -------------------------------------------------------------------- -->
+           
+    </body>
+    <!-- =================Body End==================== -->
+
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/plugins/owl.carousel.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</html>

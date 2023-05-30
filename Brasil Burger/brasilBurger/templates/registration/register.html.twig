@@ -1,0 +1,112 @@
+<!Doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Brasil Burger</title>
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font/flaticon.css">
+        <link rel="stylesheet" href="assets/css/plugins/owl.carousel.min.css">
+        <link rel="stylesheet" href="assets/css/style.css" />
+    </head>
+    <!-- =================Body Started==================== -->
+    <body>
+
+          <!-- =================Header Started================ -->
+        <header>
+            <div class="main-nav">
+                <div class="container">
+                    <div class="row">
+                        <div class="menu-toggle"></div>
+                        <div class="logo">
+                            <img src="assets/images/logo/logo.png">
+                        </div>
+
+                        <div class="my-nav">
+                            <div class="menu">
+                                <ul>
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/login">Se Connecter</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- =================Header End================ -->
+        <!-- ->->->->->->->->->->->->->->->->->->->->->->->->->->->->->-> -->
+        <main>
+
+			<section class="slider">
+                <div class="shape"></div>
+                <div class="banner">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12">
+                                            <div class="wrapper">
+
+
+                                            
+
+{% block body %}
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+
+    <h1>INSCRIPTION</h1>
+
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.login) }}
+        {{ form_row(registrationForm.nom_complet) }}
+        {{ form_row(registrationForm.tel) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button type="submit" class="btn">Register</button>
+    {{ form_end(registrationForm) }}
+     
+{% endblock %}
+
+
+
+</div>
+                                        </div>
+
+                                        <div class="col-md-6 col-sm-12">
+                                            <div class="wrapper">
+                                                <img src="assets/images/slider/slide-02.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+
+                <!-- =================Main End================ -->
+        
+                 <!-- ->->->->->->->->->->->->->->->->->->->->->->->->->->->->->-> -->
+            
+              <footer>
+            
+                    
+                <div class="copy-right-card">
+                    <p>2023 Restaurant Brasil Burger and developed by Barry </p>
+                </div>
+            
+            </footer>
+        <!-- ================================================================= -->
+		<!-- ->->->->->->->->->->->->->->->->->->->->->->->->->->->->->-> -->
+        <!-- =================Footer End================ -->

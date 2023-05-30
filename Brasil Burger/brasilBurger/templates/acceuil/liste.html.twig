@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Commande</title>
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font/flaticon.css">
+        <link rel="stylesheet" href="assets/css/plugins/owl.carousel.min.css">
+        <link rel="stylesheet" href="assets/css/style.css" />
+		<!-- Meta Tag -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name='copyright' content=''>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Title Tag  -->
+		<title>Commande </title>
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href="assets/images/logo/ird-logo.jpg">
+		<!-- Web Font -->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+		<!-- StyleSheet -->
+
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<!-- Magnific Popup -->
+		<link rel="stylesheet" href="css/magnific-popup.min.css">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="css/font-awesome.css">
+		<!-- Fancybox -->
+		<link rel="stylesheet" href="css/jquery.fancybox.min.css">
+		<!-- Themify Icons -->
+		<link rel="stylesheet" href="css/themify-icons.css">
+		<!-- Nice Select CSS -->
+		<link rel="stylesheet" href="css/niceselect.css">
+		<!-- Animate CSS -->
+		<link rel="stylesheet" href="css/animate.css">
+		<!-- Flex Slider CSS -->
+		<link rel="stylesheet" href="css/flex-slider.min.css">
+		<!-- Owl Carousel -->
+		<link rel="stylesheet" href="css/owl-carousel.css">
+		<!-- Slicknav -->
+		<link rel="stylesheet" href="css/slicknav.min.css">
+		<!-- Eshop StyleSheet -->
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css" rel="stylesheet"/>
+
+		<link rel="stylesheet" href="css/responsive.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+   {#  <script>
+        $(document).ready(function() {
+            // you may need to change this code if you are not using Bootstrap Datepicker
+            $('.js-datepicker').datepicker({
+                format: 'dd-mm-yyyy HH:mm'
+            });
+        });
+    </script> #}
+    </head>
+    <!-- =================Body Started==================== -->
+
+    <body>
+          <!-- =================Header Started================ -->
+        <header>
+            <div class="main-nav">
+                <div class="container">
+                    <div class="row">
+                        <div class="menu-toggle"></div>
+                        <div class="logo">
+                            <img src="assets/images/logo/logo.png">
+                        </div>
+                        <div class="my-nav">
+                            <div class="menu">
+                                <ul>
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/acceuil">Our Menu</a></li>
+                                    <li><a href="/liste_reserv_user">Mes commandes</a></li>
+                                    <li><a href="/logout">Deconnexion</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- =================Header End================ -->
+        <!-- ->->->->->->->->->->->->->->->->->->->->->->->->->->->->->-> -->
+        <main>
+			<section class="slider">
+
+                <div class="shape"></div>
+                <div class="banner"></div>
+                <section class="h-50 " style="background-color: #ffffff;">
+  <div class="container py-5 h-75">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+      <div class="col-12">
+                            <div class="heading">
+                                <span><h3>Liste des Commandes</h3></span>
+                                
+                                <p>--------------------------------------------------------------------------------------------------------------------------------------
+                                </p>
+                            </div>
+                        </div>
+        <div class="card ">
+          <div class="card-body p-6">
+             <div class="row">
+             
+               <div class="col-lg-12">
+               
+                <h5 class="mb-3">
+                <a class="text-body"><i
+                      class="fas fa-long-arrow-alt-left me-2"></i>Liste de vos Commandes</a></h5>
+                <hr >
+                 <div class="d-flex justify-content-between align-items-center mb-4" >
+                 
+                  <div>
+                    <p class="mb-1"> Liste des commandes...</p>
+                      <div class="card-body pt-0 pb-5 mx-auto "  style="width:150%">
+                      <table class="table"  >
+                        <thead>
+                          <tr>
+                            <th> Date</th>
+                            <th> Heure Debut/Fin</th>
+                   
+                            <th> Produit-name</th>
+                            <th> Etat Commande</th>
+                            <th> Options</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        {% for commande in commandes %}
+                          <tr>
+                            <td >
+                              <span class="text-dark"> {{ commande.date|date('d-m-Y') }} </span>
+                            </td>
+
+                            <td >
+                              <span class="text-dark"> {{ commande.date|date('H:i') }} </span>
+                            </td>
+
+                            
+
+                            <td >
+                              <span class="text-dark"> 
+                              {% for produit in commande.produits %}
+                                        {{produit.libelle}}
+                                    {% endfor %}
+                              </span>
+                            </td>
+                            <td >
+                              <span
+                                        {% if commande.etat == 'En cours' %}
+                                            class="bg-warning text-white"
+                                        {% elseif commande.etat == 'Terminé' %}
+                                            class=" bg-success"
+                                        {% else %}
+                                            class=" bg-danger"
+                                        {% endif %}
+                                        >
+                                        {{commande.etat}}
+                                    </span>
+                            </td>
+                            <td >
+                                
+                                 {% if commande.etat == 'En cours' %}
+                                  <a type="submit" href="{{path('remov_command_user', {id:commande.id})}}" class="btn btn-danger btn-sm mx-2">
+                                  Annuler
+                                  </a>
+                                  
+                                    {% else %}
+                                    <a  class="btn btn-danger btn-sm mx-2 disabled" disabled="disabled">
+                                        Annuler
+                                        </a>
+                                    {% endif %}
+                                  </td>
+                          
+                          {% endfor %}
+
+                        </tbody>
+                      </table>
+                  </div>
+
+                </div>
+
+
+               </div>
+              
+             </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+            </section>
+
+              <footer>
+            <div class="container">
+            </div>
+            <div class="copy-right">
+            <div class="container">
+                <div class="copy-right-card">
+                  <p>2023 Restaurant Brasil Burger and developed by Barry </p>
+                </div>
+            </div>
+            </div>
+        </footer>
+        <!-- ================================================================= -->
+		<!-- ->->->->->->->->->->->->->->->->->->->->->->->->->->->->->-> -->
+        <!-- =================Footer End================ -->

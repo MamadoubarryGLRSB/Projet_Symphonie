@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Burger{% endblock %}
+
+{% block body %}
+    <h1>Create new Burger</h1>
+
+    {{ include('burger/_form.html.twig') }}
+
+    <a href="{{ path('app_burger_index') }}">back to list</a>
+{% endblock %}

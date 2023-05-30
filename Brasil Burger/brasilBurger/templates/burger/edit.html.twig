@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Burger{% endblock %}
+
+{% block body %}
+    <h1>Edit Burger</h1>
+
+    {{ include('burger/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_burger_index') }}">back to list</a>
+
+    {{ include('burger/_delete_form.html.twig') }}
+{% endblock %}
